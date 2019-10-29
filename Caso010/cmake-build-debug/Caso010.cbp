@@ -74,7 +74,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/Matroid.cpp">
+			<Option target="Caso010"/>
+		</Unit>
+		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/Matroid.h">
+			<Option target="Caso010"/>
+		</Unit>
 		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/main.c">
+			<Option target="Caso010"/>
+		</Unit>
+		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/matroidEvaluator.cpp">
+			<Option target="Caso010"/>
+		</Unit>
+		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/matroidEvaluator.h">
 			<Option target="Caso010"/>
 		</Unit>
 		<Unit filename="C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/CMakeLists.txt">
