@@ -2,6 +2,11 @@
 #include <omp.h>
 
 int main() {
-    printf("Hello, World!\n");
-    return 0;
+
+    #pragma omp parallel
+    {
+        printf("Hello, World!\n");
+    }
+
+    printf("termino prro");
 }

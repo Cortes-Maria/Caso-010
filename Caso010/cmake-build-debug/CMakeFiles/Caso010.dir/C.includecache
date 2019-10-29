@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/main.c
+stdio.h
+-
+omp.h
+-
+
