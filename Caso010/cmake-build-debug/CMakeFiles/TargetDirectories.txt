@@ -1,0 +1,3 @@
+C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/cmake-build-debug/CMakeFiles/Caso010.dir
+C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/cmake-build-debug/CMakeFiles/rebuild_cache.dir
