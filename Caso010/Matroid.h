@@ -5,10 +5,10 @@
 #ifndef CASO010_MATROID_H
 #define CASO010_MATROID_H
 
-
-class Matroid{
-
+struct Matroid{
+    void function();
+    //element arrInicial[];
+    //element arrFinal[];
 };
-
 
 #endif //CASO010_MATROID_H

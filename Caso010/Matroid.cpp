@@ -3,3 +3,9 @@
 //
 
 #include "Matroid.h"
+
+void function(){
+    for(int actual = 0; actual < sizeof(this.arrInicial); actual++){
+
+    }
+}
