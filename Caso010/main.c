@@ -6,75 +6,121 @@
 #include <string.h>
 #include "Matroid.h"
 
-
-//Funciones de los primeros tres matroids
-
+/*
+//Funciones de los matroids separando elementos en cores
 void pair(struct Matroid* pMat){
     int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    #pragma omp parallel
     for(int elem = 0; elem < size; elem++){
+        int id = omp_get_thread_num();
+        printf("\n Element %d is being tested in thread %d \n",elem+1,id);
         int actual = pMat->S[elem];
         if((actual % 2) == 0){
             pMat->I[pos] = actual;
             pos++;
         }
     }
-    for(int i = 0; i<pos; i++){
-        printf("Numero %d", pMat->I[i]);
+}
+
+ void XinAWord(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    #pragma omp parallel
+    for(int i=0; i<size; i++) {
+        int id = omp_get_thread_num();
+        printf("\n Element %d is being tested in thread %d \n",elem+1,id);
+        char *str;
+        str = pMat->S[i];
+        int strSize = strlen(str);
+        for (int actual = 0; actual < strSize; actual++) {
+            if (str[actual] == 'x' || str[actual] == 'X') {
+                pMat->I[pos] = str;
+                pos++;
+                break;
+            }
+        }
     }
 }
 
 
-bool inAWord(const char *input, const char *contains){
-    bool check[256] = { false };
-    while(*input){
-        check[(unsigned char)*input++] = true;
+void higherTanThousand(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    #pragma omp parallel
+    for(int elem=0; elem<size; elem++) {
+        int id = omp_get_thread_num();
+        printf("\n Element %d is being tested in thread %d \n",elem+1,id);
+        int actual = pMat->S[elem];
+        if(actual >= 1000){
+            pMat->I[pos] = actual;
+            pos++;
+        }
     }
-    while(*contains){
-        if(!check[(unsigned char)*contains++])
-            return false;
-    }
-    return true;
 }
 
-bool palindrome(char * pMyString) {
-    int space = strlen(pMyString);
-    if (space <= 1) return 1;
-    int beg = 0, end = space - 1;
-    while (pMyString[beg] == pMyString[end]){
-        if (beg >= end) return true; // when gets to the center of the word it says it's palindrome
-        beg ++;
-        end--;
+
+*/
+//Funciones de los primeros tres matroids sin separar por elemento en core
+
+void pair(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    //#pragma omp parallel
+    for(int elem = 0; elem < size; elem++){
+        //int id = omp_get_thread_num();
+        //printf("\n Element %d is tested in thread %d \n",elem+1,id);
+        int actual = pMat->S[elem];
+        if((actual % 2) == 0){
+            pMat->I[pos] = actual;
+            pos++;
+        }
     }
-    return false;//If it gets here the word is not palindrome
 }
 
-//Funcion y arreglos de los otros
 
-bool higherTanThousand(int pNumber){
-    int count = 0;
-    while(pNumber != 0){
-        count++;
-        pNumber /= 10;
+void XinAWord(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    for(int i=0; i<size; i++) {
+        char *str;
+        str = pMat->S[i];
+        int strSize = strlen(str);
+        for (int actual = 0; actual < strSize; actual++) {
+            if (str[actual] == 'x' || str[actual] == 'X') {
+                pMat->I[pos] = str;
+                pos++;
+                break;
+            }
+        }
     }
-    if(count >= 4){
-        return true;
-    }else{
-        return false;
+}
+
+
+void higherTanThousand(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    for(int elem=0; elem<size; elem++) {
+        int actual = pMat->S[elem];
+        if(actual >= 1000){
+            pMat->I[pos] = actual;
+            pos++;
+        }
     }
 }
 
 int main(void)
 {
-    struct Matroid M1 = {{0,2,3,4,5,6,7},{NULL},pair};
-    struct Matroid M2 = {{0,2,55,4,5,6,12},{NULL},pair};
-    struct Matroid matrArray[] = {M1,M2};
+    //Matroid definition//
+    struct Matroid M1 = {{0,2,3,4,5,6,7,8},{NULL},pair};
+    struct Matroid M2 = {{0,2500,55,4,5,6000,1248654},{NULL},higherTanThousand};
+    struct Matroid M3 = {{"agua","xilofono","Xoco","pila","noño","yuuoiur","234xiop","Xesar"},{NULL},XinAWord};
+    struct Matroid matrArray[] = {M1,M2,M3};
 
-    int size =  (int)( sizeof(matrArray) / sizeof(matrArray[0]));
-    //void* returnVal;
     printf("facebook");
-    processingM(matrArray, size);
+    int size =  (int)( sizeof(matrArray) / sizeof(matrArray[0]));
+    processingM(matrArray, size); //Processing the array of matroids
     printf("\n facebook \n");
-    //printResults(matrArray[0].I,5);
+
+    //Print separate results
+    printResults(matrArray[0].I,4);
+    printResults(matrArray[1].I,3);
+    printChars(matrArray[2].I,4);
+
     printf("Termino prro!");
     return 0;
 }
