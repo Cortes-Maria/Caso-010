@@ -7,15 +7,22 @@
 #include "Matroid.h"
 
 
-//Funcion y arreglos de los primeros tres matroids
+//Funciones de los primeros tres matroids
 
-bool pair(int pNumber){
-    if ((pNumber % 2) == 0){
-        return true;
-    }else{
-        return false;
+void pair(struct Matroid* pMat){
+    int pos = 0,  size = sizeof (pMat->S)/sizeof (pMat->S[0]);
+    for(int elem = 0; elem < size; elem++){
+        int actual = pMat->S[elem];
+        if((actual % 2) == 0){
+            pMat->I[pos] = actual;
+            pos++;
+        }
+    }
+    for(int i = 0; i<pos; i++){
+        printf("Numero %d", pMat->I[i]);
     }
 }
+
 
 bool inAWord(const char *input, const char *contains){
     bool check[256] = { false };
@@ -56,6 +63,23 @@ bool higherTanThousand(int pNumber){
     }
 }
 
+int main(void)
+{
+    struct Matroid M1 = {{0,2,3,4,5,6,7},{NULL},pair};
+    struct Matroid M2 = {{0,2,55,4,5,6,12},{NULL},pair};
+    struct Matroid matrArray[] = {M1,M2};
+
+    int size =  (int)( sizeof(matrArray) / sizeof(matrArray[0]));
+    //void* returnVal;
+    printf("facebook");
+    processingM(matrArray, size);
+    printf("\n facebook \n");
+    //printResults(matrArray[0].I,5);
+    printf("Termino prro!");
+    return 0;
+}
+
+
 /*
 struct element{
     int x;
@@ -95,7 +119,6 @@ int main() {
     return 0;
 }
 
-*/
 int main() {
 
     #pragma omp parallel
@@ -104,4 +127,4 @@ int main() {
     }
 
     printf("termino prro");
-}
+}*/
