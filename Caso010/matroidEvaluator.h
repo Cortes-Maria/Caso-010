@@ -7,6 +7,7 @@
 
 
 class matroidEvaluator {
+    //recibe un arreglo de matroids y los resuelve con la funcion propia de cada uno
 
 };
 
