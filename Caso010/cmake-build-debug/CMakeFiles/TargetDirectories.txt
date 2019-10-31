@@ -1,0 +1,3 @@
+C:/CLionWorkSpace/Caso-010/Caso010/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CLionWorkSpace/Caso-010/Caso010/cmake-build-debug/CMakeFiles/Caso010.dir
+C:/CLionWorkSpace/Caso-010/Caso010/cmake-build-debug/CMakeFiles/rebuild_cache.dir
