@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+C:/CLionWorkSpace/Caso-010/Caso010/Matroid.h
+
 C:/CLionWorkSpace/Caso-010/Caso010/main.c
 stdio.h
 -
@@ -17,4 +19,8 @@ stdlib.h
 -
 stdbool.h
 -
+string.h
+-
+Matroid.h
+C:/CLionWorkSpace/Caso-010/Caso010/Matroid.h
 
