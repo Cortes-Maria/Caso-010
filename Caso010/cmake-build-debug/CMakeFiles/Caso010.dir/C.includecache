@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CLionWorkSpace/Caso-010/Caso010/Matroid.h
+
+C:/CLionWorkSpace/Caso-010/Caso010/main.c
+stdio.h
+-
+omp.h
+-
+time.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+Matroid.h
+C:/CLionWorkSpace/Caso-010/Caso010/Matroid.h
+

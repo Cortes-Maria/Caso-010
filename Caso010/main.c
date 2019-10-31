@@ -6,12 +6,8 @@
 #include <string.h>
 #include "Matroid.h"
 
-// No entiendo los matroids con void *
-// Ya la palmé anoche y no aguanto la cabeza
-
 
 //Funcion y arreglos de los primeros tres matroids
-
 
 bool pair(int pNumber){
     if ((pNumber % 2) == 0){
@@ -47,8 +43,26 @@ bool palindrome(char * pMyString) {
 
 //Funcion y arreglos de los otros
 
+bool higherTanThousand(int pNumber){
+    int count = 0;
+    while(pNumber != 0){
+        count++;
+        pNumber /= 10;
+    }
+    if(count >= 4){
+        return true;
+    }else{
+        return false;
+    }
+}
 
-/*int main() {
+/*
+struct element{
+    int x;
+    bool passed;
+};
+
+int main() {
 
     int tamano = 5;
     struct element A[tamano];
@@ -81,16 +95,7 @@ bool palindrome(char * pMyString) {
     return 0;
 }
 
-int main(){
-
-    //Se crean 3 matroids con funciones distintas y se ejecutan
-
-
-    //Se crean 5 matroids con la misma funcion y se ejecutan
-
-
-}
-
+*/
 int main() {
 
     #pragma omp parallel
@@ -99,4 +104,4 @@ int main() {
     }
 
     printf("termino prro");
-}*/
+}
