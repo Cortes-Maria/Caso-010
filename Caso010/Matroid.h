@@ -6,7 +6,6 @@
 #define CASO010_MATROID_H
 
 #define M_SIZE 7
-#define MATROID_INTERSECT_SIZE 7
 #define DEBUG 1
 
 struct Matroid
@@ -26,6 +25,23 @@ void processingM(struct Matroid matrArray[],int arrSize){
     }
 }
 
+void printResults(void *array[], int arrSize){
+    printf("Printing resutlts in I:\n");
+    for(int inArray = 0; inArray < arrSize; inArray++){
+        char *test = (char*)array[inArray];
+        printf("%d\n", test);
+    }
+    printf("\n");
+}
+
+void printChars(void *array[], int arrSize){
+    printf("Printing resutlts in M3:\n");
+    for(int inArray = 0; inArray < arrSize; inArray++){
+        char *test = (char*)array[inArray];
+        printf("%s\n", test);
+    }
+    printf("\n");
+}
 
 //https://www.cs.cmu.edu/~guna/15-123S11/Lectures/PPT/Lecture16.pdf
 
