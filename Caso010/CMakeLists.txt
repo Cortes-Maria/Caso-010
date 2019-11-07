@@ -11,5 +11,5 @@ if (OPENMP_FOUND)
 endif()
 
 
-add_executable(Caso010 main.c Matroid.cpp Matroid.h matroidEvaluator.cpp matroidEvaluator.h)
+add_executable(Caso010 main.c Matroid.h)
 

@@ -1,4 +1,4 @@
-# Install script for directory: C:/CLionWorkSpace/Caso-010/Caso010
+# Install script for directory: C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/CLionWorkSpace/Caso-010/Caso010/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/gollo/Documents/Universidad/2019 Semestre II/Analisis de Algoritmos/Caso-010/Caso010/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
